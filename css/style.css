@@ -1,0 +1,440 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#header {
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    background: #FFF;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
+    padding: 20px 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-navbar {
+    display: flex;
+    align-items: center;
+}
+
+.header-nav a {
+    padding: 0 25px;
+    color: rgba(31, 46, 53, 0.80);
+    font-size: 18px;
+    transition: .4s;
+    font-weight: 400;
+}
+
+.partner {
+    padding-right: 50px;
+    color: rgba(31, 46, 53, 0.80);
+    font-size: 18px;
+    transition: .4s;
+    font-weight: 400;
+}
+
+.partner:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.header-navbar a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.header-navbar select {
+    padding-right: 8px;
+    border: none;
+    margin-right: 25px;
+    outline: none;
+    color: rgba(31, 46, 53, 0.80);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.header-icons a ion-icon {
+    color: #1F2E35;
+    padding-right: 24px;
+    font-size: 25px;
+}
+
+/*burger-start*/
+
+.burger-menu {
+    display: none;
+    margin-top: 30px;
+}
+
+#site-menu li, #site-menu p {
+    padding: 10px;
+    margin: 0px;
+    color: #000000;
+    text-decoration: none;
+    text-transform: none;
+    list-style: none;
+    display: none;
+    text-align: center;
+    transition: all .5s;
+    /* Credit to Mike for the responsive font-sizing https://www.madebymike.com.au/writing/fluid-type-calc-examples/ */
+    font-size: calc(20px + (20 - 18) * ((100vw - 300px) / (1600 - 300)));
+}
+
+#site-menu p:hover {
+    display: block;
+    color: #5bc1e8;
+    transition: all .5s;
+    font-weight:bold;
+}
+
+/* hides toggle handler */
+[type="checkbox"]:checked, [type="checkbox"]:not(:checked) {
+    display: none;
+}
+
+/* menu button & animation */
+.menu-button {
+    position: absolute;
+    right:0px;
+    top:0px;
+    z-index: 100;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.line {
+    position: relative;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background: green;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.line:nth-child(1) {
+    top: 35%;
+}
+
+.line:nth-child(2) {
+    top: 45%;
+}
+
+.line:nth-child(3) {
+    top: 55%;
+}
+
+/* animate background of lines */
+.menu-button:hover .line::after {
+    transform: translateX(0);
+}
+
+.menu-button .line::after {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background: rgba(255, 255, 255,1);
+    transform: translateX(100%);
+    transition: all 0.25s ease;
+}
+
+#menu-toggle:checked + .menu-button .line::after {
+    background: rgba(91, 193, 232,1);
+}
+
+#menu-toggle:checked + .menu-button  {
+    transform: rotate(180deg);
+    transition: transform .2s ease;
+}
+
+#menu-toggle:checked + #menu-button .line:nth-child(1){
+    transform: translateY(5px) rotate(45deg);/*45deg*/
+}
+
+
+#menu-toggle:checked + #menu-button .line:nth-child(2) {
+    transform: scaleX(0);
+    opacity:0;
+}
+
+#menu-toggle:checked + #menu-button .line:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);/* -45deg*/
+}
+
+
+/* animate menu in */
+#menu-toggle:checked + #menu-button + #site-menu{
+    animation: menu-open 2s ease both;
+
+}
+
+#menu-toggle:checked + #menu-button + #site-menu ul > li, #site-menu p {
+    display: block;
+    animation: menu-txt-open 2.5s ease both;
+}
+
+#site-menu {
+    position: absolute;
+    width: 0px;
+    height: 100vh;
+    right:0px;
+    top:0px;
+    margin: 0px;
+    padding: 0px;
+    background-color: #fff;
+    animation: menu-closed .3s both;
+
+    transition: .2s;
+}
+
+#site-menu-titles{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+@keyframes menu-open {
+    100% {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+@keyframes menu-closed {
+    0% {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+@keyframes menu-txt-open {
+    0%, 70% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+/*burger-end*/
+
+#hero {
+    padding: 100px 0;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-group h1 {
+    width: 545px;
+    color: #1F2E35;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 133.687%;
+}
+
+.hero-group h1 span {
+    color: #EE4248;
+}
+
+.hero-group p {
+    width: 520px;
+    padding: 24px 0;
+    color: #30444E;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 144.687%;
+}
+
+.hero-group button {
+    padding: 12px 32px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .4s;
+    border-radius: 4px;
+    background: #EE4248;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.25);
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.hero-group button:hover {
+    color: white;
+    background: blue;
+    transform: scale(1.1);
+}
+
+#welcome {
+    background: #F6F6F6;
+}
+
+.welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.welcome-text h1 {
+    padding-bottom: 24px;
+    width: 454px;
+    color: #1F2E35;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 133.687%;
+}
+
+.welcome-text h1 span {
+    color: #EE4248;
+}
+
+.welcome-text p {
+    width: 520px;
+    color: #30444E;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.welcome-text p span {
+    color: #EE4248;
+}
+
+#product {
+    padding: 100px 0;
+}
+
+.product h1 {
+    padding-bottom: 41px;
+    color: #1F2E35;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.product-general {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-block h3 {
+    padding: 15px 0;
+    color: #EE4248;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.product-block p {
+    width: 319px;
+    color: #30444E;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.product-block button {
+    margin-top: 15px;
+    padding: 8px 16px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .4s;
+    border-radius: 4px;
+    background: #EE4248;
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.25);
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.product-block button:hover {
+    color: white;
+    background: blue;
+    transform: scale(1.1);
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.contact-text h2 {
+    padding: 10px 0 8px 0;
+    color: #263238;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.contact-text p {
+    color: #263238;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 149.187%;
+}
+
+.contact-text-two {
+    padding-left: 47px;
+}
+
+.contact-text-two h2 {
+    padding-bottom: 15px;
+    color: #263238;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.contact-text-two p {
+    width: 269px;
+    color: #263238;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 149.187%;
+}
+
+#footer {
+    padding: 25px 0;
+    background: #EE4248;
+}
+
+.footer h4 {
+    text-align: center;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 400;
+}

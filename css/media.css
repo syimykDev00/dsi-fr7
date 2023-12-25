@@ -1,0 +1,130 @@
+@media (max-width: 1440px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 1200px) {
+    
+}
+
+@media (max-width: 1024px) {
+    .header-navbar {
+        display: none;
+    }
+    .header-icons {
+        display: none;
+    }
+    .hero {
+        flex-direction: column;
+    }
+    .hero-group button {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    .hero img {
+        padding-top: 30px;
+    }
+    .welcome {
+        flex-direction: column-reverse;
+    }
+    .product-general {
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .burger-menu {
+        display: block;
+    }
+}
+
+@media (max-width: 992px) {
+    
+}
+
+@media (max-width: 768px) {
+    .hero-group h1, p {
+        text-align: center;
+    }
+    .welcome-text h1, p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-group h1 {
+        width: 90%;
+        margin: 0 auto;
+        font-size: 43px;
+    }
+    .hero-group p {
+        margin: 0 auto;
+        width: 90%;
+    }
+    .hero img {
+        width: 90%;
+    }
+    .welcome-text h1 {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .welcome-text p {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .product-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 30px;
+    }
+    .contact {
+        flex-direction: column;
+    }
+    .contact-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .contact-text-two {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 450px) {
+    .welcome img {
+        width: 90%;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-group h1 {
+        line-height: 123.687%;
+    }
+}
+
+@media (max-width: 375px) {
+    .hero-group h1 {
+        font-size: 40px;
+        line-height: 113.687%;
+    }
+}
+
+@media (max-width: 320px) {
+    .product h1 {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .product-block p {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
